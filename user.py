@@ -12,7 +12,7 @@ class User:
     def resolve_uid(self, user_id):
         """
         Дано uid или строка, задача понять число или строка.
-        Использую метод класса строка isnumeric
+        Использую метод класса строки isnumeric
         Если это число, возвращаю user_id
         Если вернуло False, то делаем 'https://api.vk.com/method/users.get'
         и оттуда вычленяем user_id
@@ -35,7 +35,7 @@ class User:
                   'v': '5.85'}
         response = requests.get('https://api.vk.com/method/friends.get', params, verify=False)
         data = response.json()
-        pprint(data)
+        # pprint(data)
         return data['response']
 
     def get_groups(self, user_id=None):
